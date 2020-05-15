@@ -1,0 +1,28 @@
+<!--  Launch file for signle robot on Gazebo -->
+<launch>
+<env name="GAZEBO_RESOURCE_PATH" value="$(find rrt_exploration_tutorials)/launch/includes/meshes"/>
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+<arg name="use_sim_time" value="true"/>
+<arg name="debug" value="false"/>
+<arg name="world_name" value="$(find rrt_exploration_tutorials)/launch/includes/worlds/largeMap.world"/>
+</include>
+
+<group ns="/robot_1">
+<include file="$(find rrt_exploration_tutorials)/launch/includes/robot.launch.xml">
+<arg name="robot_name" value="robot_1"/>
+<arg name="init_pose" value="-x 0.0 -y 0.0 -z 0.0"/>
+</include>
+
+<include file="$(find rrt_exploration_tutorials)/launch/includes/move_baseSafe.launch">
+<arg name="namespace" value="robot_1"/>
+</include> 
+</group>
+
+<node pkg="rviz" type="rviz" name="rviz" args="-d $(find rrt_exploration_tutorials)/launch/includes/rviz_config/single.rviz">
+<remap from="move_base_simple/goal" to="robot_1/move_base_simple/goal"/>
+</node>
+
+</launch>
+
+
+

@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/zhao/px4_catkin_ws/devel/include/**",
+        "/home/zhao/catkin_ws/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/zhao/px4_catkin_ws/src/mavros/libmavconn/include/**",
+        "/home/zhao/px4_catkin_ws/src/mavros/mavros/include/**",
+        "/home/zhao/px4_catkin_ws/src/mavros/mavros_msgs/include/**",
+        "/home/zhao/catkin_ws/src/rrt_exploration/include/**",
+        "/home/zhao/px4_catkin_ws/src/mavros/test_mavros/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}

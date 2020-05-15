@@ -1,0 +1,10 @@
+<library path="lib/libdstar_global_planner">
+
+
+  <class name="dstar_global_planner/DStarPlannerROS" type="dstar_global_planner::DStarPlannerROS" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>
+      Global Planner using D* Lite
+    </description>
+  </class>
+
+</library>

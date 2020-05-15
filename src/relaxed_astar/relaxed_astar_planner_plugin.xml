@@ -1,0 +1,5 @@
+<library path="lib/librelaxed_astar_lib">
+  <class name="RAstar_planner/RAstarPlannerROS" type="RAstar_planner::RAstarPlannerROS" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>This is Relaxed Astar global planner plugin by iroboapp project.</description>
+  </class>
+</library>

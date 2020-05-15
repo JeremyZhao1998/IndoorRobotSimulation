@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+    <!-- script_version=1.1 -->
+    <robot name="sensor_hokuyo" xmlns:xacro="http://ros.org/wiki/xacro">
+        <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_gazebo.urdf.xacro"/>
+        <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_properties.urdf.xacro"/>
+ 
+        <!-- RPLidar 2D LIDAR -->
+        <xacro:macro name="sensor_hokuyo" params="parent">
+            <joint name="laser" type="fixed">
+                <origin xyz="0.10 0 0.435" rpy="0 0.0 0.0" />
+                <parent link="base_link" />
+                <child link="hokuyo_link" />
+            </joint>
+ 
+            <!-- Hokuyo Laser -->
+            <link name="hokuyo_link">
+                <collision>
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <geometry>
+                        <box size="0.1 0.1 0.1"/>
+                    </geometry>
+                </collision>
+ 
+                <visual>
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://turtlebot_description/meshes/sensors/hokuyo.dae"/>
+                    </geometry>
+                </visual>
+ 
+                <inertial>
+                    <mass value="1e-5" />
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+                </inertial>
+            </link>
+ 
+            <!-- Set up laser gazebo details -->
+            <turtlebot_sim_2dsensor/>
+        </xacro:macro>
+    </robot>

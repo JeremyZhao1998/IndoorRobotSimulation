@@ -1,0 +1,5 @@
+Website: http://www.iroboapp.org/index.php?title=Adding_Relaxed_Astar_Global_Path_Planner_As_Plugin_in_ROS
+
+To use the package add following line in your launch file under move_base node package
+
+<param name="base_global_planner" value="RAstar_planner/RAstarPlannerROS"/> 
